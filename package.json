@@ -9,9 +9,9 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@ai-sdk/mistral": "^2.0.33",
-    "@ai-sdk/react": "^2.0.0",
-    "ai": "^5.0.0",
+    "@ai-sdk/mistral": "^3.0.37",
+    "@ai-sdk/react": "^3.0.195",
+    "ai": "^6.0.193",
     "idb-keyval": "^6.2.4",
     "markdown-to-jsx": "^7.7.17",
     "next": "^15.1.0",
