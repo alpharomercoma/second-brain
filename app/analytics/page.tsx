@@ -13,7 +13,7 @@ export default function Analytics() {
 
   useEffect(() => {
     try {
-      const t = localStorage.getItem('sb.theme');
+      const t = localStorage.getItem('tt.theme');
       if (t === 'light' || t === 'dark') setTheme(t);
     } catch {}
     setEvents(loadUsage());
@@ -22,7 +22,7 @@ export default function Analytics() {
   useEffect(() => {
     document.documentElement.dataset.theme = theme;
     try {
-      localStorage.setItem('sb.theme', theme);
+      localStorage.setItem('tt.theme', theme);
     } catch {}
   }, [theme]);
 
@@ -66,7 +66,7 @@ export default function Analytics() {
 
       {empty ? (
         <div className="an-empty">
-          No usage yet. Ask your second brain something, then come back — your token and tool-call
+          No usage yet. Ask ThinkTrove something, then come back — your token and tool-call
           history will appear here.
         </div>
       ) : (

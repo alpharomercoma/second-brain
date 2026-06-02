@@ -96,7 +96,7 @@ export default function Editor({
             What will you <em>make</em> next?
           </h2>
           <p>
-            Open a document from the sidebar, or start a new one. Then ask your second brain below to
+            Open a document from the sidebar, or start a new one. Then ask ThinkTrove below to
             mine your past work for ideas worth pursuing.
           </p>
         </div>
@@ -160,7 +160,7 @@ export default function Editor({
               className="editor"
               value={content}
               spellCheck={false}
-              placeholder="Begin writing here, or let your second brain draft into this page…"
+              placeholder="Begin writing here, or let ThinkTrove draft into this page…"
               onChange={(e) => {
                 onChange(e.target.value);
                 autosize();

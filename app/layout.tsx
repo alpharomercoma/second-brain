@@ -18,9 +18,9 @@ const mono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: 'Second Brain — an idea studio',
+  title: 'ThinkTrove — an idea studio',
   description:
-    'A second brain for brainstorming new ideas, projects, and talks — grounded in your own body of work. Powered by Mistral AI.',
+    'ThinkTrove is your idea studio for brainstorming new talks, projects, and applications — grounded in your own body of work. Local-first, powered by Mistral AI.',
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

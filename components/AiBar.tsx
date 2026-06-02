@@ -441,7 +441,7 @@ export default function AiBar({ openPath, apiKey, onChangeApiKey, onDocumentWrit
             placeholder={
               openPath
                 ? `Brainstorm, or draft into ${base(openPath)}…   (Shift+Enter for a new line)`
-                : 'Ask your second brain for new ideas from your past work…   (Shift+Enter for a new line)'
+                : 'Ask ThinkTrove for new ideas from your past work…   (Shift+Enter for a new line)'
             }
             value={input}
             onChange={(e) => {
@@ -541,7 +541,7 @@ const Turn = memo(function Turn({ message }: { message: any }) {
 
   return (
     <div className="turn assistant">
-      <div className="who">Second Brain</div>
+      <div className="who">ThinkTrove</div>
       {trace.length > 0 && (
         <details className="trace">
           <summary>

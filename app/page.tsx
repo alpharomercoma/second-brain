@@ -18,7 +18,7 @@ import FileTree from '@/components/FileTree';
 import Editor from '@/components/Editor';
 import AiBar from '@/components/AiBar';
 
-const KEY_STORE = 'sb.mistralKey';
+const KEY_STORE = 'tt.mistralKey';
 
 export default function Home() {
   const [files, setFiles] = useState<DocEntry[]>([]);
@@ -36,14 +36,14 @@ export default function Home() {
   // --- theme ---
   useEffect(() => {
     try {
-      const t = localStorage.getItem('sb.theme');
+      const t = localStorage.getItem('tt.theme');
       if (t === 'light' || t === 'dark') setTheme(t);
     } catch {}
   }, []);
   useEffect(() => {
     document.documentElement.dataset.theme = theme;
     try {
-      localStorage.setItem('sb.theme', theme);
+      localStorage.setItem('tt.theme', theme);
     } catch {}
   }, [theme]);
   const toggleTheme = useCallback(() => setTheme((t) => (t === 'dark' ? 'light' : 'dark')), []);
@@ -51,12 +51,12 @@ export default function Home() {
   // --- sidebar ---
   useEffect(() => {
     try {
-      setCollapsed(localStorage.getItem('sb.sidebar') === 'collapsed');
+      setCollapsed(localStorage.getItem('tt.sidebar') === 'collapsed');
     } catch {}
   }, []);
   useEffect(() => {
     try {
-      localStorage.setItem('sb.sidebar', collapsed ? 'collapsed' : 'open');
+      localStorage.setItem('tt.sidebar', collapsed ? 'collapsed' : 'open');
     } catch {}
   }, [collapsed]);
   const toggleSidebar = useCallback(() => {

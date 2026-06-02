@@ -15,7 +15,7 @@ export type DocEntry = {
   uploadedAt: string; // ISO; kept this name so existing UI code is unchanged
 };
 
-const store = createStore('second-brain', 'docs');
+const store = createStore('thinktrove', 'docs');
 const TEXT_EXT = /\.(md|markdown|txt|json|csv|yaml|yml|html?|rtf)$/i;
 
 type Stored = { content: string; updatedAt: number };
@@ -101,7 +101,7 @@ export async function snapshotForChat(): Promise<{ path: string; content: string
 }
 
 const ONBOARDING_PATH = 'getting-started.md';
-const ONBOARDING = `# Welcome to your Second Brain 🧠
+const ONBOARDING = `# Welcome to ThinkTrove 🧠
 
 This is a **local-first** idea studio. Everything you write lives **on this device**
 (in your browser's storage) — no account, no cloud. That makes it instant.
@@ -136,7 +136,7 @@ Delete this file whenever you like. Happy thinking!
  * (unknown/new fields are tolerated by the readers, which default missing values).
  */
 export const SCHEMA_VERSION = 1;
-const SCHEMA_KEY = 'sb.schema';
+const SCHEMA_KEY = 'tt.schema';
 
 export async function migrate(): Promise<void> {
   let from = 0;

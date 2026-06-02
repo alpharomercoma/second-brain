@@ -224,7 +224,7 @@ export default function FileTree({
     <aside className="index">
       <div className="index-head">
         <h1 className="wordmark">
-          second<em>brain</em>
+          think<em>trove</em>
         </h1>
         <div className="tagline">Ideas, grounded in your work</div>
       </div>

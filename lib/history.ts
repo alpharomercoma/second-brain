@@ -13,7 +13,7 @@ export type Conversation = {
   messages: UIMessage[];
 };
 
-const KEY = 'sb.conversations.v1';
+const KEY = 'tt.conversations.v1';
 const MAX = 100;
 
 export function loadConversations(): Conversation[] {

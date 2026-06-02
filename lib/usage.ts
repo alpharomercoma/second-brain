@@ -16,7 +16,7 @@ export type UsageEvent = {
   toolsByName: Record<string, number>;
 };
 
-const KEY = 'sb.usage.v1';
+const KEY = 'tt.usage.v1';
 const MAX = 2000;
 
 export function loadUsage(): UsageEvent[] {
