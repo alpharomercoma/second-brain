@@ -67,7 +67,7 @@ export async function POST(req: Request) {
   const result = streamText({
     model: getModel(model, key),
     system: ideaSystemPrompt(typeof openPath === 'string' ? openPath : undefined),
-    messages: convertToModelMessages(messages),
+    messages: await convertToModelMessages(messages),
     tools,
     stopWhen: stepCountIs(8),
     temperature: p.temperature,

@@ -7,7 +7,7 @@ import { DEFAULT_MODEL, isKnownModel } from './models';
  * each chat request). Falls back to a server env key if present — handy for
  * local testing — but normal use is the user's own key.
  *
- * Version note: `@ai-sdk/mistral@^2` targets `@ai-sdk/provider@2`, matching `ai@5`.
+ * Version note: `@ai-sdk/mistral@^3` targets `@ai-sdk/provider@3`, matching `ai@6`.
  */
 const ENV_DEFAULT = process.env.MISTRAL_MODEL ?? DEFAULT_MODEL;
 
