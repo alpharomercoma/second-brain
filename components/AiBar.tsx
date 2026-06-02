@@ -62,6 +62,8 @@ export default function AiBar({ openPath, apiKey, onChangeApiKey, onDocumentWrit
   const [draftKey, setDraftKey] = useState('');
   // Panel size: 'min' (focus the document) · 'normal' · 'max' (focus the AI, full screen).
   const [size, setSize] = useState<'min' | 'normal' | 'max'>('normal');
+  // On small screens the model picker drops its description to stay compact.
+  const [compact, setCompact] = useState(false);
 
   const transcriptRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLTextAreaElement>(null);
@@ -92,6 +94,13 @@ export default function AiBar({ openPath, apiKey, onChangeApiKey, onDocumentWrit
       localStorage.setItem('aibar.size', size);
     } catch {}
   }, [size]);
+  useEffect(() => {
+    const mq = window.matchMedia('(max-width: 560px)');
+    const apply = () => setCompact(mq.matches);
+    apply();
+    mq.addEventListener('change', apply);
+    return () => mq.removeEventListener('change', apply);
+  }, []);
 
   const ORDER = ['min', 'normal', 'max'] as const;
   function grow() {
@@ -244,8 +253,7 @@ export default function AiBar({ openPath, apiKey, onChangeApiKey, onDocumentWrit
           <select value={model} onChange={(e) => setModel(e.target.value)} aria-label="Model" title="Model">
             {MODELS.map((m) => (
               <option key={m.id} value={m.id}>
-                {m.label}
-                {m.note ? ` — ${m.note}` : ''}
+                {compact ? m.label : m.label + (m.note ? ` — ${m.note}` : '')}
               </option>
             ))}
           </select>

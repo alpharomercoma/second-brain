@@ -1934,8 +1934,33 @@ body {
     padding: 30px 20px 44px;
     border-radius: 12px;
   }
+  /* keep the controls on ONE row: the model picker shrinks, the action
+     cluster stays put. Only the (conditional) status pill wraps to its own line. */
   .console-bar {
     flex-wrap: wrap;
+    gap: 8px;
+    padding: 8px 12px;
+  }
+  .modelpick {
+    /* basis 0 so the picker claims none of the row up front — the fixed-width
+       action cluster lays out first, then the picker fills the remaining space */
+    flex: 1 1 0;
+    min-width: 0;
+    gap: 5px;
+  }
+  .modelpick select {
+    /* basis 0: the select claims none of the line up front, so the row lays out
+       from the action cluster's fixed width, then the select fills what's left —
+       it never pushes the actions onto a second row */
+    flex: 1 1 0;
+    min-width: 0;
+  }
+  .bar-actions {
+    flex: 0 0 auto;
+    /* the picker's flex-grow pushes us to the right edge; an auto margin here
+       would instead eat the whole line and force a wrap */
+    margin-left: 0;
+    gap: 5px;
   }
   .status {
     width: 100%;
@@ -1951,11 +1976,5 @@ body {
   }
   .bar-btn {
     padding: 7px 9px;
-  }
-}
-
-@media (max-width: 480px) {
-  .modelpick select {
-    max-width: 44vw;
   }
 }
